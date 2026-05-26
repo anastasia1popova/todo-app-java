@@ -125,6 +125,11 @@
                         <phase>verify</phase>
                         <goals><goal>check</goal></goals>
                         <configuration>
+                            <!-- Исключаем Main: интерактивный CLI-цикл не покрывается
+                                 юнит-тестами по своей природе -->
+                            <excludes>
+                                <exclude>com/vsu/todo/app/Main.class</exclude>
+                            </excludes>
                             <rules>
                                 <rule>
                                     <element>BUNDLE</element>
