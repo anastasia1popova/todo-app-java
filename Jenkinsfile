@@ -11,11 +11,6 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'Maven-3.9'
-        jdk   'JDK-17'
-    }
-
     environment {
         PUBLISH_DIR    = "${env.WORKSPACE}/published"
         COVERAGE_THRESHOLD = '50'
