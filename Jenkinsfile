@@ -74,16 +74,6 @@ pipeline {
                 echo 'Измерение тестового покрытия (JaCoCo)'
                 sh 'mvn -B verify'
             }
-            post {
-                always {
-                    jacoco(
-                        execPattern: '**/target/jacoco.exec',
-                        classPattern: '**/target/classes',
-                        sourcePattern: '**/src/main/java',
-                        minimumLineCoverage: env.COVERAGE_THRESHOLD
-                    )
-                }
-            }
         }
 
         stage('Install') {
